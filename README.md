@@ -1,10 +1,22 @@
 # workshop-2026 — Predicting Online-Business Valuation Multiples
 
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-numeric_data-150458?logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-arrays-013243?logo=numpy&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-GBR%20%2B%20CV-F7931E?logo=scikitlearn&logoColor=white)
+![sentence-transformers](https://img.shields.io/badge/sentence--transformers-MiniLM%20%2F%20Qwen3-EE4C2C?logo=huggingface&logoColor=white)
+![SHAP](https://img.shields.io/badge/SHAP-interpretability-1f77b4)
+![Google Colab](https://img.shields.io/badge/Colab-GPU%20embeddings-F9AB00?logo=googlecolab&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+[![Live report](https://img.shields.io/badge/Live%20report-Open-7c2d3a)](https://m2nwo079.github.io/workshop-2026/)
+
 A supervised regression pipeline that predicts the **valuation multiple** of
 online businesses from their listing text and financial/operational metrics,
 using the public [Empire Flippers API](https://api.empireflippers.com/).
 
 **Central question:** *Beyond the level of profit, what drives the multiple up?*
+
+**Live report:** https://m2nwo079.github.io/workshop-2026/
 
 An interactive write-up of the full study is in [`index.html`](index.html).
 
