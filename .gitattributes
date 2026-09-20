@@ -1,0 +1,14 @@
+# GitHub Linguist overrides
+# Treat the interactive report as documentation so it does not count
+# toward the repository's language statistics (which should reflect the
+# Python analysis code, not the generated HTML report).
+index.html linguist-documentation
+
+# Notebooks are generated/exploratory output; keep them out of language stats.
+*.ipynb linguist-documentation
+
+# Ensure consistent line endings for text sources.
+*.py   text eol=lf
+*.md   text eol=lf
+*.html text eol=lf
+*.csv  text eol=lf
