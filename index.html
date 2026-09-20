@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Drives an Online Business's Valuation Multiple?</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{--ink:#2a2320;--ink-soft:#6b5d54;--paper:#f4f0ea;--paper-edge:#e6ded2;--rule:#cebfad;--teal:#7c2d3a;--teal-soft:#ecd9d5;--amber:#a9761a;--up:#3f6f52;--down:#a13b32;--maxw:760px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;line-height:1.65;font-size:18px;-webkit-font-smoothing:antialiased}
+  body.lang-ko{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .controls{position:sticky;top:0;z-index:50;background:rgba(247,245,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  .controls-inner{max-width:var(--maxw);margin:0 auto;padding:10px 28px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  .toggle-group{display:flex;align-items:center;gap:8px}
+  .toggle-group .tlabel{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .seg{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
+  .seg button{border:0;background:transparent;cursor:pointer;font-family:inherit;font-size:13px;padding:6px 13px;color:var(--ink-soft);transition:background .15s,color .15s}
+  .seg button:hover{color:var(--ink)}
+  .seg button.active{background:var(--teal);color:#fff;font-weight:600}
+  .seg button:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+  header{border-bottom:3px double var(--ink);padding:52px 0 34px;margin-bottom:8px}
+  .kicker{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:20px}
+  h1{font-size:40px;line-height:1.14;margin:0 0 22px;font-weight:700;letter-spacing:-.01em}
+  body.lang-ko h1{letter-spacing:-.02em}
+  .standfirst{font-size:20px;color:var(--ink-soft);font-style:italic;margin:0 0 26px;line-height:1.5}
+  body.lang-ko .standfirst{font-style:normal}
+  .byline{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:13px;color:var(--ink-soft);letter-spacing:.02em;display:flex;flex-wrap:wrap;gap:8px 18px;border-top:1px solid var(--rule);padding-top:16px}
+  body.lang-ko .byline{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  .byline span b{color:var(--ink);font-weight:600}
+  section{padding:30px 0}
+  .sec-num{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:13px;font-weight:700;color:var(--teal);letter-spacing:.08em}
+  h2{font-size:27px;margin:4px 0 18px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+  h3{font-size:19px;margin:30px 0 8px;font-weight:700;font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  body.lang-ko h3{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  p{margin:0 0 18px}a{color:var(--teal)}
+  .lede::first-letter{font-size:58px;line-height:.82;float:left;padding:6px 10px 0 0;font-weight:700}
+  body.lang-ko .lede::first-letter{font-size:18px;line-height:inherit;float:none;padding:0;font-weight:inherit}
+  .abstract{background:#fff;border:1px solid var(--paper-edge);border-left:4px solid var(--teal);padding:24px 28px;margin:4px 0 12px;font-size:16.5px;line-height:1.6}
+  .abstract .lbl{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:10px}
+  .abstract p:last-child{margin-bottom:0}
+  .headline-metric{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin:26px 0;padding:24px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .hm-big{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:64px;font-weight:700;color:var(--ink);letter-spacing:-.03em;line-height:1}
+  .hm-arrow{font-size:30px;color:var(--teal);font-family:sans-serif}
+  .hm-label{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:14px;color:var(--ink-soft);line-height:1.5;max-width:280px}
+  body.lang-ko .hm-label{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  figure{margin:30px 0;background:#fff;border:1px solid var(--paper-edge);padding:22px 22px 16px}
+  figcaption{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.5;margin-top:14px;padding-top:12px;border-top:1px solid var(--paper-edge)}
+  body.lang-ko figcaption{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  figcaption b{color:var(--ink);font-weight:600}
+  .fig-title{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:15px;font-weight:700;margin-bottom:16px;color:var(--ink)}
+  body.lang-ko .fig-title{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .grid{stroke:var(--paper-edge);stroke-width:1}
+  .tick-txt{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:11px;fill:var(--ink-soft)}
+  .bar-lbl{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:12px;fill:var(--ink)}
+  .val-lbl{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:12px;font-weight:700;fill:var(--ink)}
+  table{border-collapse:collapse;width:100%;margin:24px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--paper-edge);font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  body.lang-ko th,body.lang-ko td{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  thead th{border-bottom:2px solid var(--ink);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+  td.num{font-variant-numeric:tabular-nums;text-align:right}
+  tr.highlight td{background:var(--teal-soft);font-weight:700}
+  .drivers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+  .driver-col{background:#fff;border:1px solid var(--paper-edge);padding:16px 18px}
+  .driver-col h4{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:14px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  body.lang-ko .driver-col h4{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  .driver-col.up h4{color:var(--up)}.driver-col.down h4{color:var(--down)}
+  .driver-col ul{margin:0;padding-left:18px;font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:14.5px}
+  body.lang-ko .driver-col ul{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  .driver-col li{margin-bottom:7px}.sym{font-size:18px;font-weight:700}
+  .pull{font-size:22px;line-height:1.4;font-style:italic;color:var(--ink);border-left:3px solid var(--amber);padding:4px 0 4px 22px;margin:30px 0}
+  body.lang-ko .pull{font-style:normal}
+  .method{background:#fdfcfa;border:1px dashed var(--rule);padding:18px 22px;font-size:14.5px;color:var(--ink-soft);font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;line-height:1.6}
+  body.lang-ko .method{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  .method code{background:var(--paper-edge);padding:1px 5px;border-radius:3px;font-size:13px}
+  footer{border-top:3px double var(--ink);margin-top:40px;padding:30px 0 80px;font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;font-size:13px;color:var(--ink-soft)}
+  body.lang-ko footer{font-family:"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif}
+  @media (max-width:620px){body{font-size:17px}h1{font-size:29px}.hm-big{font-size:46px}.drivers{grid-template-columns:1fr}.controls-inner{gap:12px;padding:8px 20px}.seg button{padding:6px 10px;font-size:12px}}
+  @media (prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}.reveal.in{opacity:1;transform:none}}
+</style>
+</head>
+<body class="lang-en level-expert">
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="toggle-group">
+      <span class="tlabel" data-t="ui_lang">Language</span>
+      <div class="seg" role="group" aria-label="Language">
+        <button id="lang-en" class="active" onclick="setLang('en')">English</button>
+        <button id="lang-ko" onclick="setLang('ko')">한국어</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="kicker" data-slot="kicker"></div>
+    <h1 data-slot="title"></h1>
+    <p class="standfirst" data-slot="standfirst"></p>
+    <div class="byline" data-slot="byline"></div>
+  </div>
+</header>
+
+<div class="wrap" id="report"></div>
+
+<footer><div class="wrap" data-slot="footer"></div></footer>
+
+<script>
+(function(){
+"use strict";
+var UI={ui_lang:{en:"Language",ko:"언어"},ui_level:{en:"Level",ko:"난이도"},ui_easy:{en:"Plain",ko:"쉬운 설명"},ui_expert:{en:"Technical",ko:"전문가용"}};
+var C={
+ kicker:{en:{easy:"Empire Flippers · A data project, explained simply",expert:"Empire Flippers · Supervised Regression Study"},ko:{easy:"Empire Flippers · 쉽게 풀어 쓴 데이터 프로젝트",expert:"Empire Flippers · 지도학습 회귀 연구"}},
+ title:{en:{easy:"What makes an online business sell for more?",expert:"What drives an online business's valuation multiple?"},ko:{easy:"온라인 사업은 무엇 때문에 더 비싸게 팔릴까?",expert:"무엇이 온라인 사업의 가치 배수를 끌어올리는가?"}},
+ standfirst:{en:{easy:"Two businesses that earn the same money can sell for very different prices. We looked at 2,848 real listings to find what makes the difference — and taught a computer to guess it.",expert:"Profit sets the price. But two businesses with the same profit can sell for very different multiples — so what explains the rest? A study of 2,848 marketplace listings, combining financial metrics, growth trends, and the text of each listing."},ko:{easy:"같은 돈을 버는 두 사업도 팔리는 가격은 크게 다를 수 있다. 실제 매물 2,848개를 살펴 그 차이가 어디서 오는지 찾고, 컴퓨터가 그 가격을 맞히도록 학습시켰다.",expert:"순익은 가격을 정한다. 하지만 같은 순익을 내는 두 사업도 배수는 크게 다를 수 있다. 그 나머지는 무엇으로 설명되는가? 재무 지표·성장 추세·매물 설명 텍스트를 결합해 매물 2,848개를 분석했다."}},
+ byline:{en:{easy:[["Data","Empire Flippers (public)"],["Goal","Guess the price ratio"],["Listings","2,848"],["Check","Tested on unseen data"]],expert:[["Data","Empire Flippers public API"],["Task","Predict annual listing multiple"],["n","2,848 listings"],["Method","5-fold cross-validation"]]},ko:{easy:[["데이터","Empire Flippers (공개)"],["목표","판매 가격 배수 맞히기"],["매물 수","2,848개"],["검증","보지 않은 데이터로 시험"]],expert:[["데이터","Empire Flippers 공개 API"],["과제","연간 호가 배수 예측"],["표본","매물 2,848개"],["방법","5-겹 교차검증"]]}},
+ footer:{en:{easy:"workshop-2026 · Predicting online-business price ratios · Data: Empire Flippers public API · Not financial advice; the numbers here are model guesses, not appraisals.",expert:"workshop-2026 · Predicting online-business valuation multiples · Data: Empire Flippers public API · Not financial advice; multiples reported are model estimates, not appraisals."},ko:{easy:"workshop-2026 · 온라인 사업 판매 배수 예측 · 데이터: Empire Flippers 공개 API · 투자 조언이 아니며, 여기 숫자는 모델의 추정치이지 감정가가 아닌다.",expert:"workshop-2026 · 온라인 사업 가치 배수 예측 · 데이터: Empire Flippers 공개 API · 투자 조언이 아니며, 제시된 배수는 모델 추정치이지 감정가가 아닌다."}}
+};
+var SECTIONS=[
+ {type:"abstract",body:{
+  en:{easy:"An online business usually sells for some multiple of its yearly profit — earn $100,000, sell for $300,000, that's a 3× multiple. Part of that multiple is easy to explain from the numbers; part isn't. We tried to predict it from each listing's finances, how fast it's growing, and what its written description says. Using only financial numbers, a model explains 40% of the differences between businesses. Adding growth information pushes that to 45%. Adding the meaning of the text does the same, separately. Because those two clues don't overlap much, using both together reaches the best result — explaining 48% of the differences, cutting the average error by about a third. We also checked the text genuinely helped (random text made things worse), and found a fancier, heavier text model barely beat a small one.",
+      expert:"The valuation multiple of an online business — its sale price divided by annual profit — is set partly by measurable fundamentals and partly by softer factors. We predict the multiple from a listing's financials, operating metrics, growth trend, and free-text description. A gradient-boosting model on financial and categorical features alone explains 40% of the variance in log-multiple. Adding growth-trend features lifts this to 45%; adding sentence embeddings of the listing text lifts it independently by a similar margin. Because the two signals are largely non-overlapping, combining them reaches R² 0.48 and a mean absolute error of 0.377×. Controls confirm the text gain is genuine — random vectors of the same shape hurt rather than help — and a dimension sweep shows more embedding dimensions and larger models do not reliably improve prediction on a dataset this size."},
+  ko:{easy:"온라인 사업은 보통 연간 순익의 몇 배로 팔린다. 1억 원을 벌고 3억 원에 팔리면 3배(3× 배수)다. 이 배수 중 일부는 숫자로 쉽게 설명되지만 나머지는 그렇지 않다. 우리는 각 매물의 재무 상태, 성장 속도, 설명 글의 내용으로 이 배수를 맞혀보려 했다. 재무 숫자만 쓰면 사업 간 차이의 40%를 설명했고, 성장 정보를 더하니 45%로 올랐다. 텍스트의 의미를 더해도 따로 비슷하게 올랐다. 두 단서는 겹치지 않아서 함께 쓰면 가장 좋은 결과(48% 설명, 평균 오차 약 3분의 1 감소)에 도달했다. 텍스트가 정말 도움이 됐는지도 확인했고(무작위 텍스트는 오히려 성능을 낮춤), 더 무겁고 정교한 텍스트 모델이 작은 모델을 아주 근소하게만 이긴다는 것도 발견했다.",
+      expert:"온라인 사업의 가치 배수(판매가를 연간 순익으로 나눈 값)는 측정 가능한 펀더멘털과 그렇지 않은 요인이 함께 결정한다. 우리는 매물의 재무·운영 지표, 성장 추세, 자유 서술 텍스트로 배수를 예측한다. 재무·범주형 특징만 쓴 그래디언트 부스팅 모델은 로그 배수 분산의 40%를 설명한다. 성장 추세 특징을 더하면 45%로, 텍스트 문장 임베딩을 더하면 독립적으로 비슷한 폭만큼 오른다. 두 신호가 거의 겹치지 않아 결합하면 R² 0.48, 평균절대오차 0.377배에 도달한다. 대조 실험으로 텍스트 기여가 진짜임을 확인했고(같은 형태의 무작위 벡터는 성능을 낮춤), 차원 스윕으로 임베딩 차원이나 모델 크기를 키운다고 이 규모에서 예측이 반드시 나아지지는 않음을 보였다."}}},
+ {type:"text",num:"00",noheadnum:true,
+  h:{en:{easy:"Where this started",expert:"Motivation"},ko:{easy:"이 연구가 시작된 곳",expert:"연구 동기"}},
+  p:{
+   en:{easy:[
+      "This project started at a trade fair. At the Korea e-Commerce Fair I came across esoop — a Korean service that puts a price tag on an online store. You connect your sales channels, and its AI reads your revenue, fees, and ad spend to estimate what your business is worth and hand it off to a buyer.",
+      "That raised a simple question in my head. If a machine can estimate what an online business is worth, what is it actually reading to arrive at that number? Not just the profit — two stores earning the same can still be worth very different amounts. I wanted to see, on real data, what separates them.",
+      "esoop works on Korean marketplaces, whose numbers are private. So I used the public Empire Flippers data instead — the same kind of question, on data anyone can check."
+     ],
+     expert:[
+      "This study was prompted by a product. At the Korea e-Commerce Fair I encountered esoop, a Korean e-commerce M&A platform that estimates the value of an online store: it links to the seller's sales channels, and an AI model trained on domestic marketplace data ingests revenue, channel fees, and ad spend to produce a valuation and support the handover to a buyer.",
+      "That prompted the question this project examines. If a model can estimate what an online business is worth, what signal is it actually using — and how much of the valuation is explained by profit alone versus everything else? The multiple, not the price, isolates that 'everything else': two businesses with identical profit can still command very different multiples.",
+      "esoop operates on Korean marketplaces, whose underlying figures are proprietary. To study the same question on openly verifiable data, this project uses the public Empire Flippers API instead — a global online-business marketplace with a documented, no-auth endpoint."
+     ]},
+   ko:{easy:[
+      "이 프로젝트는 전시회에서 시작됐다. 한국이커머스페어에서 '이숲'이라는 서비스를 봤다. 온라인 스토어에 값을 매겨주는 국내 서비스인데, 판매 채널을 연동하면 AI가 매출·수수료·광고비를 읽어 사업의 가치를 추정하고 매수인에게 넘기는 것까지 돕는다.",
+      "여기서 단순한 질문이 떠올랐다. 기계가 온라인 사업의 값을 추정할 수 있다면, 대체 무엇을 읽고 그 숫자에 도달하는 걸까? 순익만은 아니다. 같은 돈을 버는 두 스토어도 가치는 크게 다를 수 있으니까. 무엇이 그 둘을 가르는지 실제 데이터로 보고 싶었다.",
+      "이숲은 국내 마켓 데이터를 쓰는데, 그 숫자는 비공개다. 그래서 대신 공개된 Empire Flippers 데이터를 썼다. 같은 질문을, 누구나 확인할 수 있는 데이터 위에서 던진 것이다."
+     ],
+     expert:[
+      "이 연구는 한 제품에서 촉발됐다. 한국이커머스페어에서 '이숲'을 접했다. 온라인 스토어의 가치를 추정하는 국내 이커머스 M&A 플랫폼으로, 판매자의 판매 채널을 연동하면 국내 마켓 데이터로 학습한 AI 모델이 매출·채널수수료·광고비를 수집해 가치평가액을 산출하고 매수인에게 넘기는 양수도 과정을 지원한다.",
+      "여기서 이 프로젝트가 다루는 질문이 나왔다. 모델이 온라인 사업의 가치를 추정할 수 있다면, 실제로 무슨 신호를 쓰는가? 그리고 그 가치 중 순익만으로 설명되는 부분은 얼마이고, 나머지는 무엇인가? 가격이 아니라 배수가 바로 그 '나머지'를 분리해 낸다. 같은 순익을 내는 두 사업도 배수는 크게 다를 수 있기 때문이다.",
+      "이숲은 국내 마켓에서 작동하며 그 원천 수치는 비공개다. 같은 질문을 공개적으로 검증 가능한 데이터로 다루기 위해, 이 프로젝트는 대신 공개 Empire Flippers API를 쓴다. 인증이 필요 없는 문서화된 엔드포인트를 가진 글로벌 온라인 사업 마켓플레이스다."
+     ]}},
+  method:{
+   en:{easy:"To be clear: this is an independent study using public data, not affiliated with esoop. esoop was the spark for the question, not a data source.",
+       expert:"To be explicit: this is an independent study on public data and is not affiliated with esoop. The platform motivated the research question; it is not a data source, and none of its data is used here."},
+   ko:{easy:"분명히 해두면, 이건 공개 데이터를 쓴 독립 연구이며 이숲과는 무관하다. 이숲은 질문의 계기였을 뿐 데이터 출처가 아니다.",
+       expert:"분명히 밝히면, 이 연구는 공개 데이터를 이용한 독립 연구로 이숲과 제휴 관계가 없다. 해당 플랫폼은 연구 질문의 계기였을 뿐, 데이터 출처가 아니며 이숲의 데이터는 여기에 전혀 사용되지 않았다."}}},
+ {type:"text",num:"01",lede:true,
+  h:{en:{easy:"The question behind the price",expert:"The question behind the number"},ko:{easy:"가격 뒤에 숨은 질문",expert:"숫자 뒤에 숨은 질문"}},
+  p:{en:{easy:["A \"multiple\" is just a ratio: the selling price divided by the yearly profit. A site earning $100,000 that sells for $300,000 sold at a 3× multiple. Two businesses can earn the exact same profit but sell at very different multiples — one at 2×, another at 4× — and that gap is where all the interesting judgment hides. It reflects how safe, how transferable, and how promising a buyer thinks the business is.","That makes the multiple a better thing to study than the raw price. Price is mostly just \"bigger profit, bigger price.\" The multiple strips size out and asks what's left. If we can predict and explain it, we learn what buyers actually pay extra for.","One early decision shaped everything. There are two versions of the multiple: what the seller asks, and what a buyer actually paid. The \"actually paid\" version is better, but a quick check showed the public data never includes it. So we used the asking version — which had a silver lining: already-sold listings kept all their details, so we could use them too, growing our data from 183 to 2,848 businesses."],
+        expert:["A valuation multiple is the shorthand of the online-business market. A site earning $100,000 a year that sells for $300,000 sold at a 3× multiple. The multiple is where judgment lives: it encodes how durable, how transferable, and how promising a buyer thinks the business is. Profit tells you the base; the multiple tells you the premium.","That makes the multiple a more interesting prediction target than price. Price is largely mechanical — bigger profit, bigger price. The multiple strips the size away and asks what's left. If we can predict it, and more importantly explain it, we learn what the market actually rewards beyond raw earnings.","One decision shaped everything downstream. The multiple can be measured two ways: the listing multiple (what the seller asks) and the sale multiple (what a buyer actually paid). The sale multiple is the higher-quality label, but a direct check of the public API showed it is never returned, even for sold listings. So the listing multiple became the target — with a useful side effect: sold listings keep their full financials and text, growing the training set from 183 active listings to 2,848."]},
+     ko:{easy:["'배수'는 그저 비율이다. 판매 가격을 연간 순익으로 나눈 값이다. 1억 원을 버는 사이트가 3억 원에 팔리면 3배이다. 두 사업이 똑같은 순익을 내도 하나는 2배, 다른 하나는 4배로 팔릴 수 있는데, 바로 이 차이에 흥미로운 판단이 전부 숨어 있다. 그 사업이 얼마나 안정적이고, 넘기기 쉽고, 앞날이 밝은지를 반영하기 때문이다.","그래서 배수는 가격 자체보다 연구하기 좋은 대상이다. 가격은 대체로 '많이 벌면 비싸다'일 뿐이다. 배수는 규모를 걷어내고 그 나머지를 묻다. 이걸 맞히고 설명할 수 있다면, 사람들이 실제로 무엇에 웃돈을 주는지 알게 된다.","초반의 한 결정이 모든 걸 좌우했다. 배수에는 두 종류가 있다. 파는 사람이 '부른' 값과 사는 사람이 '실제 낸' 값이다. 실제 낸 값이 더 좋지만, 확인해보니 공개 데이터에는 그 값이 아예 없었다. 그래서 부른 값을 목표로 삼았는데, 뜻밖의 이득이 있었다. 이미 팔린 매물도 정보가 다 남아 있어 함께 쓸 수 있었고, 데이터가 183개에서 2,848개로 늘었다."],
+        expert:["가치 배수는 온라인 사업 시장의 축약어이다. 연 1억 원을 버는 사이트가 3억 원에 팔리면 3배다. 배수에는 판단이 담긴다. 그 사업이 얼마나 견고하고 이전 가능하며 유망한지를 사는 사람이 어떻게 보는지가 응축돼 있다. 순익이 바탕을 말한다면, 배수는 프리미엄을 말한다.","그래서 배수는 가격보다 흥미로운 예측 대상이다. 가격은 대체로 기계적이다 — 순익이 크면 가격도 크다. 배수는 규모를 걷어내고 그 나머지를 묻다. 이를 예측하고, 더 중요하게는 설명할 수 있다면, 시장이 순수 수익을 넘어 무엇에 보상하는지 알게 된다.","한 결정이 이후 전부를 좌우했다. 배수는 두 가지로 측정된다. 호가 배수(파는 사람이 부른 값)와 성사 배수(사는 사람이 실제 낸 값)이다. 성사 배수가 더 품질 좋은 라벨이지만, 공개 API를 직접 호출해보니 팔린 매물에도 응답에 담기지 않았다. 그래서 호가 배수를 타깃으로 삼았고, 유용한 부수 효과가 있었다. 팔린 매물도 재무·텍스트가 온전히 남아, 학습 데이터가 활성 매물 183개에서 2,848개로 늘었다."]}},
+  method:{en:{easy:"Avoiding a trap: since multiple = price ÷ profit, if we let the model see the price, it could just do the division and \"cheat.\" So we removed every price-related field before training. Profit stays, because the whole point is to ask what matters beyond profit.",expert:"Leakage guard. Because multiple ≈ price ÷ profit, including any price field would let the model reconstruct the answer. The fields listing_price, unpriced, and listing_multiple are dropped in code, with an assertion that they never survive into the feature table. Profit itself is kept — a legitimate signal of scale, and the whole point is to ask what beyond profit matters."},ko:{easy:"함정 피하기: 배수 = 가격 ÷ 순익이므로, 모델에게 가격을 보여주면 그냥 나눗셈으로 '답을 베낄' 수 있다. 그래서 학습 전에 가격 관련 항목을 모두 제거했다. 순익은 남겨둔다 — 순익을 넘어 무엇이 중요한지를 묻는 것이 목적이기 때문이다.",expert:"누수 방지. 배수 ≈ 가격 ÷ 순익이므로, 가격 필드를 넣으면 모델이 답을 역산할 수 있다. listing_price, unpriced, listing_multiple 필드를 코드에서 제거하고, 특징 테이블에 절대 남지 않도록 단언(assert)한다. 순익 자체는 규모 신호로서 유지한다 — 순익을 넘어 무엇이 중요한지가 핵심 질문이다."}}},
+ {type:"text",num:"02",headline:true,
+  h:{en:{easy:"Start simple, then add two clues",expert:"A baseline, then two additions"},ko:{easy:"단순하게 시작해 두 단서를 더하다",expert:"기준선, 그리고 두 가지 추가"}},
+  p:{en:{easy:["We built the model in layers, adding one thing at a time, so we could see exactly what each change was worth. We always tested on data the model hadn't seen during training — otherwise a model can just memorize and look better than it really is.","The starting model uses only the obvious numbers: profit, revenue, costs, business age, working hours, the type of business, its category. On its own, that explains 40% of the differences between businesses. Good, but far from the full story — 60% is still unexplained. That's where the two extra clues come in."],expert:["The modeling proceeds in layers, each compared on identical cross-validation folds so every gain is attributable to one change. A regularized linear model (Ridge) and a gradient-boosting model run side by side; boosting wins throughout, which is itself informative — the relationship between features and multiple is non-linear.","The baseline uses financial scale (log profit, revenue, expenses), margins, business age, operating hours, monetization type, niche, and country. It explains 40% of the log-multiple variance — a real signal, but far from the whole story. The remaining 60% is where the two additions come in."]},ko:{easy:["우리는 모델을 한 겹씩 쌓았다. 한 번에 하나씩 더해서 각 변화가 정확히 얼마의 값어치를 하는지 보기 위해서다. 그리고 항상 학습 때 보지 않은 데이터로 시험했다 — 안 그러면 모델이 그냥 외워버려서 실제보다 좋아 보일 수 있기 때문이다.","출발 모델은 뻔한 숫자만 쓴다. 순익, 매출, 비용, 사업 연령, 노동 시간, 사업 종류, 분야 같은 것들이다. 이것만으로 사업 간 차이의 40%를 설명한다. 좋긴 하지만 전부는 아니고, 60%가 아직 안 풀린다. 바로 여기에 두 가지 단서가 등장한다."],expert:["모델링은 겹겹이 진행되며, 각 단계를 동일한 교차검증 폴드로 비교해 모든 향상이 하나의 변화에 귀속되게 했다. 정규화 선형 모델(Ridge)과 그래디언트 부스팅을 나란히 돌렸고, 부스팅이 시종 앞섰다. 이 자체가 정보이다 — 특징과 배수의 관계가 비선형이라는 뜻이다.","기준선은 재무 규모(로그 순익·매출·비용), 마진, 사업 연령, 노동 시간, 수익화 유형, 니치, 국가를 쓴다. 로그 배수 분산의 40%를 설명한다 — 실제 신호이지만 전부는 아닌다. 나머지 60%에 두 가지 추가가 개입한다."]}}},
+ {type:"fig1"},
+ {type:"text",num:"03",
+  h:{en:{easy:"Did the text really help — or just add clutter?",expert:"Does the text really matter, or just the extra columns?"},ko:{easy:"텍스트가 정말 도움이 됐을까, 아니면 그냥 잡동사니였을까?",expert:"텍스트가 진짜 기여했나, 아니면 그저 열이 늘어난 건가?"}},
+  p:{en:{easy:["When we turned each description into 50 columns of numbers and the score went up, that alone doesn't prove the words helped. Sometimes just adding more columns lets a model look better. So we ran a fair test: replace the real text-numbers with random noise of the exact same size, and try again.","The random noise made the score worse (from 40% down to 38%). The real text made it better (up to 45%). Same number of columns, opposite result — so it really was the meaning in the words that helped, not just having more columns."],expert:["Adding 50 columns of text embedding and watching the score rise is not, by itself, evidence that the text helped. More columns can raise a score through sheer flexibility. To separate the two, we ran a control: replace the real embeddings with random vectors of exactly the same shape, and re-run.","The random vectors lowered R² from 0.40 to 0.38. The real embeddings raised it to 0.45. Same number of columns, opposite effect — so the gain is the meaning inside the text, not the width of the matrix. Whatever a listing says about its opportunities and risks carries information the financial columns don't."]},ko:{easy:["각 설명 글을 숫자 50개로 바꿨더니 점수가 올랐다고 해서, 그것만으로 '글이 도움이 됐다'고 할 순 없다. 그냥 열을 많이 넣으면 모델이 좋아 보일 때가 있기 때문이다. 그래서 공정한 시험을 했다. 진짜 텍스트-숫자를 똑같은 크기의 무작위 잡음으로 바꿔 다시 돌려보았다.","무작위 잡음은 점수를 오히려 낮췄고(40% → 38%), 진짜 텍스트는 높였다(45%). 열 개수는 같은데 결과는 정반대였다 — 그러니 도움을 준 건 열이 많아서가 아니라 글 속의 '의미'였던 것이다."],expert:["텍스트 임베딩 50열을 더해 점수가 올랐다고 해서, 그것만으로 텍스트가 기여했다는 증거는 아닌다. 열이 늘면 순전한 유연성으로 점수가 오를 수 있기 때문이다. 둘을 분리하려고 대조 실험을 했다. 진짜 임베딩을 정확히 같은 형태의 무작위 벡터로 바꿔 다시 돌렸다.","무작위 벡터는 R²를 0.40에서 0.38로 낮췄고, 진짜 임베딩은 0.45로 높였다. 열 개수는 같은데 효과는 정반대였다 — 향상은 행렬의 너비가 아니라 텍스트 속 의미에서 온다. 매물이 기회와 리스크를 어떻게 서술하든, 거기엔 재무 열에 없는 정보가 담겨 있다."]}},
+  pull:{en:{easy:"Same number of columns, opposite result. What helped was the meaning of the words, not the count.",expert:"Same number of columns, opposite effect. The signal is in what the text says — not that there is more of it."},ko:{easy:"열 개수는 같은데 결과는 정반대. 도움이 된 건 글의 '의미'이지, 개수가 아니었다.",expert:"열 개수는 같은데 효과는 정반대. 신호는 텍스트가 '무엇을 말하는가'에 있지, '많다'는 데 있지 않다."}}},
+ {type:"text",num:"04",
+  h:{en:{easy:"Bigger isn't automatically better",expert:"Bigger isn't automatically better"},ko:{easy:"크다고 무조건 좋은 건 아니다",expert:"크다고 자동으로 낫지는 않다"}},
+  p:{en:{easy:["Two natural questions came next. Does a fancier text-reading model help? And does keeping more of the text-numbers help? Both answers pushed back on the \"more is better\" instinct.","The fancier model (much bigger, took 8 minutes instead of 9 seconds) won — but only by a tiny margin. And when we kept more and more text-numbers, the score rose to a peak around 30, then fell. Keeping more actually hurt."],expert:["Two questions followed naturally. Does a stronger embedding model help? And do more embedding dimensions help? Both answers pushed back on the intuition that more is better.","On the model: MiniLM (384-dim, ~90 MB, ~9 s on GPU) was compared against Qwen3-0.6B (1024-dim, ~1.2 GB, ~8 min). The larger model won by a hair — 0.447 vs 0.437 fused — at roughly fifty times the compute. On dimensions: reducing the Qwen embedding with PCA to sizes from 5 to 300 traced a clean inverted-U."]},ko:{easy:["다음으로 자연스러운 두 질문이 나왔다. 더 정교한 텍스트 해독 모델이 도움이 될까? 텍스트-숫자를 더 많이 남기면 나아질까? 두 답 모두 '많을수록 좋다'는 직감을 뒤집었다.","더 정교한 모델(훨씬 크고 9초가 아니라 8분 걸림)이 이기긴 했지만 아주 근소한 차이였다. 그리고 텍스트-숫자를 점점 더 많이 남겨봤더니 점수가 30 부근에서 정점을 찍고 다시 내려갔다. 더 많이 남기는 것이 오히려 해가 되었다."],expert:["자연스럽게 두 질문이 뒤따랐다. 더 강한 임베딩 모델이 도움이 될까? 임베딩 차원을 더 많이 쓰면 나아질까? 두 답 모두 '많을수록 좋다'는 직관을 뒤집었다.","모델 측면: MiniLM(384차원, 약 90MB, GPU에서 약 9초)을 Qwen3-0.6B(1024차원, 약 1.2GB, 약 8분)와 비교했다. 큰 모델이 근소하게 이겼다 — 결합 시 0.447 대 0.437 — 연산량은 약 50배였다. 차원 측면: Qwen 임베딩을 PCA로 5~300차원까지 줄여봤더니 뚜렷한 역U자가 그려졌다."]}}},
+ {type:"fig2"},
+ {type:"text",num:"04b",noheadnum:true,h:{en:{easy:"",expert:""},ko:{easy:"",expert:""}},
+  p:{en:{easy:["The takeaway: with only a few thousand examples, shrinking the text-numbers isn't just faster — it protects the model from getting distracted by irrelevant patterns (like writing style) and memorizing noise."],expert:["The lesson is the one dimensionality reduction was meant to teach: on a small dataset, compression is not just a speed trick, it is regularization. The components PCA discards past ~30 are mostly the stylistic and topical variation of the text that has nothing to do with valuation, and keeping them invites the model to memorize noise."]},ko:{easy:["요점은 이렇다. 예시가 수천 개뿐일 때는 텍스트-숫자를 줄이는 것이 단지 속도만이 아니라, 무관한 패턴(문체 같은)에 정신 팔려 잡음을 외우는 걸 막아주는 안전장치가 된다."],expert:["차원 축소가 원래 가르치려던 교훈이다. 소규모 데이터에서 압축은 단지 속도 요령이 아니라 정규화이다. PCA가 30 이후로 버리는 성분은 대개 가치와 무관한 문체·주제 변이이고, 그걸 남기면 모델이 잡음을 외우게 된다."]}}},
+ {type:"text",num:"05",
+  h:{en:{easy:"The most useful clue was already there",expert:"The most useful column was already in the data"},ko:{easy:"가장 유용한 단서는 이미 데이터 안에 있었다",expert:"가장 유용한 열은 이미 데이터에 있었다"}},
+  p:{en:{easy:["Before even using the text, the data held fields we hadn't touched. Two looked promising: how fast a business was growing, and how much traffic it got. Only one turned out to matter.","Growth was the single most useful thing we added — it lifted the basic model from 40% to 45%, as much as all the text work did. Traffic (how many visitors) added nothing. The message is clean: the market pays for a rising trajectory, not for a big audience. Lots of visitors but no matching profit? That's already baked into the profit number."],expert:["Before reaching for text at all, the response held fields the baseline never used. Two looked promising: growth (profit and revenue trend) and traffic (page views, unique visitors). Only one mattered.","Growth trend was the single most valuable addition of the study — it lifted the tabular baseline from 0.40 to 0.45, matching the entire text pipeline. Traffic volume added nothing measurable. The interpretation is clean: the market pays for a trajectory, not an audience. A business with many visitors but no matching earnings gets no premium, because its profit already captures whatever those visitors are worth."]},ko:{easy:["텍스트를 쓰기도 전에, 데이터에는 우리가 안 건드린 항목들이 있었다. 둘이 유망해 보였다. 사업이 얼마나 빨리 크고 있는지, 그리고 방문자가 얼마나 많은지. 그런데 정작 중요했던 건 하나뿐이었다.","성장은 우리가 더한 것 중 가장 유용했다 — 기본 모델을 40%에서 45%로 끌어올려 텍스트 작업 전체와 맞먹었다. 반면 방문자 수(트래픽)는 아무것도 더하지 못했다. 메시지는 분명한다. 시장은 '오르는 흐름'에 값을 치르지, '많은 관객'에 치르지 않다. 방문자는 많은데 그만한 수익이 없다? 그건 이미 순익 숫자에 반영돼 있다."],expert:["텍스트를 꺼내기도 전에, 응답에는 기준선이 쓰지 않은 필드들이 있었다. 둘이 유망해 보였다. 성장(순익·매출 추세)과 트래픽(페이지뷰, 순방문자)이다. 정작 중요한 건 하나뿐이었다.","성장 추세는 이 연구에서 가장 값진 추가였다 — 표 기준선을 0.40에서 0.45로 끌어올려 텍스트 파이프라인 전체와 맞먹었다. 트래픽 규모는 측정 가능한 기여가 없었다. 해석은 분명한다. 시장은 관객이 아니라 궤적에 값을 치른다. 방문자는 많지만 그에 걸맞은 수익이 없는 사업은 프리미엄을 못 받다. 그 방문자의 가치는 이미 순익에 반영돼 있기 때문이다."]}},
+  pull:{en:{easy:"The market pays for a rising trajectory, not a big audience. Growth earned a premium; traffic did not.",expert:"The market pays for a trajectory, not an audience. Growth earned a premium; traffic did not."},ko:{easy:"시장은 많은 관객이 아니라 오르는 궤적에 값을 치른다. 성장은 프리미엄을 얻었고, 트래픽은 그러지 못했다.",expert:"시장은 관객이 아니라 궤적에 값을 치른다. 성장은 프리미엄을 얻었고, 트래픽은 그러지 못했다."}}},
+ {type:"text",num:"06",drivers:true,
+  h:{en:{easy:"What the model learned to reward",expert:"What the model learned to reward"},ko:{easy:"모델이 무엇에 보상하도록 배웠나",expert:"모델이 무엇에 보상하도록 학습했나"}},
+  p:{en:{easy:["A good score is only half the goal — we also want to know why. A tool called SHAP lets us ask the model which things pushed a predicted multiple up, and which pushed it down."],expert:["A predictive score is only half the goal; the other half is explanation. SHAP attributions on the final model turn the black box into a set of directional statements about what raises or lowers a predicted multiple."]},ko:{easy:["좋은 점수는 목표의 절반일 뿐, 우리는 '왜'도 알고 싶다. SHAP이라는 도구로 어떤 요소가 예측 배수를 올렸고 어떤 게 내렸는지 모델에게 물어볼 수 있다."],expert:["예측 점수는 목표의 절반이고, 나머지 절반은 설명이다. 최종 모델에 SHAP 기여도를 적용하면, 블랙박스가 무엇이 예측 배수를 올리고 내리는지에 대한 방향성 진술로 바뀐다."]}},
+  after:{en:{easy:["None of this is surprising, which is a good sign — it means the model found the market's real logic. Recurring income (like subscriptions) and legal protection (a trademark) earn a premium; a listing that has sat unsold for a long time gets marked down, because sitting there is itself a sign of weak demand.","Where is the model least sure? On big businesses (their prices are more one-of-a-kind) and, oddly, on SaaS — the very category with the highest prices. High reward and high uncertainty travel together."],expert:["The directions are intuitive, which is reassuring rather than dull — it means the model recovered the market's real logic. Recurring revenue and legal defensibility (a trademark) command premiums; a listing that has languished unsold gets marked down, its time on the marketplace acting as a public signal of weak demand.","Error is not uniform. It grows with business size — large businesses are harder to price — and is highest for SaaS listings, the same category that commands the highest multiples. High reward and high variance travel together. Residuals are otherwise symmetric around zero, with no systematic bias."]},ko:{easy:["이 중 놀라운 건 없는데, 그게 좋은 신호이다 — 모델이 시장의 진짜 논리를 찾아냈다는 뜻이기 때문이다. 반복 수입(구독 같은)과 법적 보호(상표)는 프리미엄을 받고, 오래 안 팔린 매물은 값이 깎이다. 오래 남아 있다는 것 자체가 수요가 약하다는 신호이기 때문이다.","모델이 가장 자신 없어 하는 곳은? 큰 사업(가격이 더 제각각이라)과, 뜻밖에도 SaaS(가장 비싼 분야)이다. 높은 보상과 높은 불확실성은 함께 다닌다."],expert:["방향은 직관적이며, 이는 지루함이 아니라 안심의 근거이다 — 모델이 시장의 실제 논리를 복원했다는 뜻이기 때문이다. 반복 매출과 법적 방어력(상표)은 프리미엄을 부르고, 오래 안 팔린 매물은 값이 깎이다. 시장 체류 기간이 수요 약세의 공개 신호로 작동하는 것이다.","오차는 균일하지 않다. 사업 규모가 클수록 커지고(큰 사업일수록 가격이 특수함), SaaS에서 가장 높다 — 가장 높은 배수를 부르는 바로 그 분야다. 높은 보상과 높은 분산은 함께 다닌다. 그 외 잔차는 0을 중심으로 대칭이며 체계적 편향이 없다."]}}},
+ {type:"table",num:"07",
+  h:{en:{easy:"All the results in one place",expert:"Results in full"},ko:{easy:"모든 결과를 한자리에",expert:"전체 결과"}},
+  after:{en:{easy:"Starting from a naïve guess that's off by 0.574 on average, the final model roughly cuts the error by a third. There's a ceiling, though: a lot of what sets a final price — buyer competition, negotiation, the mood of the market that day — simply isn't in this data, and no model can recover what was never recorded.",expert:"From a naïve baseline that misses by 0.574 multiple points on average, the final model roughly cuts the error by a third. The ceiling is real: much of what sets a final sale multiple — buyer competition, negotiation, market mood — is simply not in this data, and no model can recover what was never recorded."},ko:{easy:"평균 0.574만큼 빗나가는 어림짐작에서 출발해, 최종 모델은 오차를 대략 3분의 1로 줄이다. 다만 천장이 있다. 최종 가격을 정하는 많은 것 — 구매자 경쟁, 협상, 그날 시장 분위기 — 은 애초에 이 데이터에 없고, 기록되지 않은 걸 되살릴 수 있는 모델은 없다.",expert:"평균 0.574배 빗나가는 순진한 기준선에서, 최종 모델은 오차를 대략 3분의 1로 줄이다. 천장은 실재한다. 최종 성사 배수를 정하는 많은 것 — 구매자 경쟁, 협상, 시장 분위기 — 은 이 데이터에 없고, 기록되지 않은 것을 되살릴 모델은 없다."}}},
+ {type:"text",num:"08",
+  h:{en:{easy:"What we conclude",expert:"What this study concludes"},ko:{easy:"결론",expert:"이 연구의 결론"}},
+  p:{en:{easy:["Beyond how much a business earns, three things move its selling multiple: whether it's growing, whether its model is durable and hard to copy, and what its own description says about its future and its risks. Growth and text turned out to be nearly equal helpers — and, importantly, they help in different ways, so using both is better than either alone.","The how-to lessons matter just as much: a fancier text model bought almost nothing, keeping more detail actually hurt, and one well-chosen number matched a whole text pipeline. With only a few thousand examples, keeping things small and simple was the right call."],expert:["Beyond the level of profit, three things move an online business's multiple: whether it is growing, whether its model is durable and defensible, and what its own description says about its prospects and risks. Growth trend and listing text turned out to be nearly equal and, crucially, complementary contributors — a quantitative and a qualitative view of the same question, each seeing what the other misses.","The methodological findings are as useful as the substantive ones. Bigger embedding models bought little; more dimensions actively hurt; a single well-chosen numeric feature matched a whole text pipeline. On a dataset of a few thousand rows, restraint — in model size, dimensionality, and feature count — was not a compromise but the right call."]},ko:{easy:["사업이 얼마를 버는지를 넘어, 판매 배수를 움직이는 건 세 가지이다. 성장하고 있는가, 사업 모델이 오래가고 따라 하기 어려운가, 그리고 자기 설명 글이 미래와 리스크에 대해 무엇을 말하는가. 성장과 텍스트는 거의 대등한 도우미였고, 중요한 건 둘이 서로 다른 방식으로 돕기에 함께 쓰는 것이 각각보다 낫다는 점이다.","방법에 관한 교훈도 그만큼 값지다. 더 정교한 텍스트 모델은 거의 이득이 없었고, 더 많은 세부를 남기는 건 오히려 해가 됐으며, 잘 고른 숫자 하나가 텍스트 파이프라인 전체와 맞먹었다. 예시가 수천 개뿐일 때는 작고 단순하게 가는 것이 옳은 선택이었다."],expert:["순익 수준을 넘어, 온라인 사업의 배수를 움직이는 것은 세 가지이다. 성장하고 있는가, 모델이 견고하고 방어 가능한가, 그리고 자기 설명이 전망과 리스크에 대해 무엇을 말하는가. 성장 추세와 매물 텍스트는 거의 대등하고, 결정적으로 상호 보완적인 기여자였다 — 같은 질문의 정량적·정성적 두 시선으로, 서로가 놓친 것을 본다.","방법론적 발견도 실질적 발견만큼 유용한다. 더 큰 임베딩 모델은 이득이 적었고, 차원을 늘리면 오히려 해로웠으며, 잘 고른 수치 특징 하나가 텍스트 파이프라인 전체와 맞먹었다. 수천 행짜리 데이터에서 절제 — 모델 크기·차원·특징 수의 절제 — 는 타협이 아니라 옳은 선택이었다."]}},
+  method:{en:{easy:"How we kept it honest: every result was tested on data the model didn't train on, using the same setup each time so comparisons are fair. Data comes from the official public source at a polite one request per second; the raw text is kept private and never published — only the derived numbers and results are shared.",expert:"Reproducibility. All results are 5-fold cross-validated with a fixed seed, so every comparison holds the evaluation constant and varies only the feature set. Data is collected from the official public API at one request per second; raw listing text is kept private and never published; only derived embeddings and aggregate results are shared. Full code and pipeline are in the repository README."},ko:{easy:"공정성을 지킨 방법: 모든 결과를 모델이 학습하지 않은 데이터로 시험했고, 매번 같은 설정을 써서 비교가 공정하도록 했다. 데이터는 공식 공개 출처에서 예의를 지켜 초당 1회씩 받았고, 원문 텍스트는 비공개로 두어 공개하지 않았다 — 가공한 숫자와 결과만 공유한다.",expert:"재현성. 모든 결과는 고정 시드의 5-겹 교차검증으로, 평가를 일정하게 두고 특징 세트만 바꿔 비교한다. 데이터는 공식 공개 API에서 초당 1회로 수집했고, 원문 텍스트는 비공개로 공개하지 않으며, 가공 임베딩과 집계 결과만 공유한다. 전체 코드와 파이프라인은 저장소 README에 있다."}}}
+];
+var FIG={
+ fig1_title:{en:"Figure 1 — What each layer adds",ko:"그림 1 — 각 층이 더하는 것"},
+ fig1_cap:{en:{easy:"<b>Growth and text help separately, then add up.</b> Growth alone and text alone each raise the score by about the same amount. Because they carry different clues, using both together gives the best result.",expert:"<b>Growth trend and text contribute independently.</b> Trend alone and text alone each lift R² by roughly 0.05 over the baseline. Because they encode different things, their gains stack when combined. GradientBoosting, 5-fold CV."},ko:{easy:"<b>성장과 텍스트는 따로 돕고, 합치면 더해진다.</b> 성장만, 텍스트만 각각 점수를 비슷한 폭으로 올린다. 서로 다른 단서를 담고 있어, 둘을 함께 쓰면 가장 좋은 결과가 나온다.",expert:"<b>성장 추세와 텍스트는 독립적으로 기여한다.</b> 추세만, 텍스트만 각각 기준선 대비 R²를 약 0.05씩 올린다. 서로 다른 것을 담기에 결합하면 향상이 더해진다. 그래디언트 부스팅, 5-겹 교차검증."}},
+ fig2_title:{en:"Figure 2 — Keeping more text-detail vs. the score",ko:"그림 2 — 텍스트 세부를 더 남길 때의 점수"},
+ fig2_cap:{en:{easy:"<b>Best around 30, then downhill.</b> Too little text-detail underfits; too much makes the model memorize noise. Even keeping 94.5% of the detail (at 300) did worse than a lean 30. More detail isn't more signal.",expert:"<b>Peak near 30–50 dimensions, then decline.</b> Too few dims underfit; too many overfit on 2,848 rows. 300 dims preserved 94.5% of the embedding's variance yet predicted worse than 30 — retained variance is not the same as useful signal. Dashed line marks the fused-baseline region."},ko:{easy:"<b>30 부근이 최고, 이후 내리막.</b> 텍스트 세부가 너무 적으면 못 맞히고, 너무 많으면 잡음을 외운다. 세부를 94.5%까지 남겨도(300) 날렵한 30보다 못했다. 세부가 많다고 신호가 많은 건 아닌다.",expert:"<b>30–50차원 부근 정점, 이후 하락.</b> 차원이 너무 적으면 과소적합, 너무 많으면 2,848행에서 과적합. 300차원은 임베딩 분산의 94.5%를 보존했지만 30차원보다 나쁘게 예측했다 — 보존 분산은 유용한 신호와 다르다. 점선은 결합 기준선 구간."}},
+ hm_label:{en:{easy:"How much of the difference between businesses the model explains — from the basic model to the final one.",expert:"Cross-validated R² on log-multiple, from the financial baseline to the final model with trend and text."},ko:{easy:"모델이 사업 간 차이를 얼마나 설명하는지 — 기본 모델에서 최종 모델까지.",expert:"로그 배수에 대한 교차검증 R², 재무 기준선에서 추세·텍스트를 더한 최종 모델까지."}}
+};
+var DRIVERS={
+ up_title:{en:"▲ Raises the multiple",ko:"▲ 배수를 올린다"},down_title:{en:"▼ Lowers the multiple",ko:"▼ 배수를 내린다"},
+ up:{en:{easy:["Higher yearly profit","Subscription / recurring income","Owns a trademark","Older, proven business"],expert:["Higher annual net profit","SaaS / recurring revenue","Trademark ownership","Older, more mature business"]},ko:{easy:["연간 순익이 높음","구독·반복 수입","상표 보유","오래되고 검증된 사업"],expert:["높은 연간 순익","SaaS·반복 매출","상표 보유","더 오래되고 성숙한 사업"]}},
+ down:{en:{easy:["Sat unsold a long time","eCommerce / physical selling","Very new / unproven","Weak protection from copycats"],expert:["More days on the marketplace","eCommerce monetization","Unproven / very young business","Thin defensibility signals"]},ko:{easy:["오래 안 팔리고 남아 있음","이커머스·실물 판매","아주 새롭고 검증 안 됨","베끼기 방어가 약함"],expert:["시장 체류일이 김","이커머스 수익화","검증 안 된·아주 어린 사업","방어력 신호가 얇음"]}}
+};
+var TABLE={
+ head:{en:["Condition","log R²","Mean error (×)"],ko:["조건","로그 R²","평균 오차 (배)"]},
+ head_easy:{en:["What we used","Explains","Avg. miss (×)"],ko:["무엇을 썼나","설명력","평균 빗나감 (배)"]},
+ rows:{en:{easy:[["Just a plain guess","—","0.574"],["Basic numbers","40%","0.418"],["+ the text","45%","0.399"],["+ growth","45%","0.389"],["+ growth & text (final)","48%","0.377"]],expert:[["Baseline — predict the mean","—","0.574"],["Financial + categorical (v1)","0.400","0.418"],["v1 + text embeddings","0.447","0.399"],["v1 + growth trend (v2)","0.447","0.389"],["v2 + text — final model","0.482","0.377"]]},ko:{easy:[["그냥 어림짐작","—","0.574"],["기본 숫자","40%","0.418"],["+ 텍스트","45%","0.399"],["+ 성장","45%","0.389"],["+ 성장 & 텍스트 (최종)","48%","0.377"]],expert:[["기준선 — 평균으로 예측","—","0.574"],["재무 + 범주형 (v1)","0.400","0.418"],["v1 + 텍스트 임베딩","0.447","0.399"],["v1 + 성장 추세 (v2)","0.447","0.389"],["v2 + 텍스트 — 최종 모델","0.482","0.377"]]}},
+ highlightRow:4
+};
+var ABSTRACT_LBL={en:"Abstract",ko:"초록"};
+var PEAK_LBL={en:"peak ≈ 30",ko:"정점 ≈ 30"};
+var state={lang:"en",level:"expert"};
+function pick(obj){var b=obj[state.lang];if(b==null)return"";if(typeof b==="object"&&!Array.isArray(b))return b[state.level];return b;}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+function renderMast(){
+ document.querySelector('[data-slot="kicker"]').textContent=pick(C.kicker);
+ document.querySelector('[data-slot="title"]').textContent=pick(C.title);
+ document.querySelector('[data-slot="standfirst"]').textContent=pick(C.standfirst);
+ var by=document.querySelector('[data-slot="byline"]');by.innerHTML="";
+ pick(C.byline).forEach(function(pr){by.appendChild(el("span",null,"<b>"+pr[0]+"</b> "+pr[1]));});
+ document.querySelector('[data-slot="footer"]').textContent=pick(C.footer);
+ document.querySelectorAll("[data-t]").forEach(function(n){var k=n.getAttribute("data-t");if(UI[k])n.textContent=UI[k][state.lang];});
+ document.documentElement.lang=state.lang;document.title=pick(C.title);
+}
+function renderReport(){
+ var root=document.getElementById("report");root.innerHTML="";
+ SECTIONS.forEach(function(s){
+  var sec=el("section","reveal");
+  if(s.type==="abstract"){var box=el("div","abstract");box.appendChild(el("div","lbl",ABSTRACT_LBL[state.lang]));box.appendChild(el("p",null,pick(s.body)));sec.appendChild(box);root.appendChild(sec);return;}
+  if(s.type==="text"||s.type==="table"){if(!s.noheadnum&&s.num)sec.appendChild(el("div","sec-num",s.num));var ht=pick(s.h);if(ht)sec.appendChild(el("h2",null,ht));}
+  if(s.type==="text"){
+   (pick(s.p)||[]).forEach(function(pa,i){sec.appendChild(el("p",(i===0&&s.lede)?"lede":null,pa));});
+   if(s.pull)sec.appendChild(el("div","pull",pick(s.pull)));
+   if(s.drivers)sec.appendChild(buildDrivers());
+   if(s.after)pick(s.after).forEach(function(pa){sec.appendChild(el("p",null,pa));});
+   if(s.method)sec.appendChild(el("div","method",pick(s.method)));
+   if(s.headline)sec.appendChild(buildHeadline());
+  }
+  if(s.type==="fig1")sec.appendChild(buildFigure("fig-scoreboard",FIG.fig1_title[state.lang],pick(FIG.fig1_cap)));
+  if(s.type==="fig2")sec.appendChild(buildFigure("fig-pca",FIG.fig2_title[state.lang],pick(FIG.fig2_cap)));
+  if(s.type==="table"){sec.appendChild(buildTable());if(s.after)sec.appendChild(el("p",null,pick(s.after)));}
+  root.appendChild(sec);
+ });
+ armFigure("fig-scoreboard",drawScoreboard);
+ armFigure("fig-pca",drawPca);
+ initReveal();
+}
+function buildHeadline(){var w=el("div","headline-metric");w.appendChild(el("span","hm-big","0.40"));w.appendChild(el("span","hm-arrow","→"));var b=el("span","hm-big","0.48");b.style.color="var(--teal)";w.appendChild(b);w.appendChild(el("span","hm-label",pick(FIG.hm_label)));return w;}
+function buildFigure(id,title,cap){var f=el("figure");f.appendChild(el("div","fig-title",title));var svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("id",id);svg.setAttribute("viewBox",id==="fig-pca"?"0 0 680 320":"0 0 680 300");svg.setAttribute("role","img");f.appendChild(svg);f.appendChild(el("figcaption",null,cap));return f;}
+function buildDrivers(){var w=el("div","drivers");var u=el("div","driver-col up");u.appendChild(el("h4",null,DRIVERS.up_title[state.lang]));var ul=el("ul");pick(DRIVERS.up).forEach(function(t){ul.appendChild(el("li",null,t));});u.appendChild(ul);var d=el("div","driver-col down");d.appendChild(el("h4",null,DRIVERS.down_title[state.lang]));var dl=el("ul");pick(DRIVERS.down).forEach(function(t){dl.appendChild(el("li",null,t));});d.appendChild(dl);w.appendChild(u);w.appendChild(d);return w;}
+function buildTable(){var tb=el("table");var head=state.level==="easy"?TABLE.head_easy[state.lang]:TABLE.head[state.lang];var th=el("thead");var tr=el("tr");head.forEach(function(h,i){tr.appendChild(el("th",i>0?"num":null,h));});th.appendChild(tr);tb.appendChild(th);var tbody=el("tbody");pick(TABLE.rows).forEach(function(r,ri){var t=el("tr",(ri===TABLE.highlightRow-1)?"highlight":null);r.forEach(function(c,ci){t.appendChild(el("td",ci>0?"num":null,c));});tbody.appendChild(t);});tb.appendChild(tbody);return tb;}
+var drawn={};
+function armFigure(id,fn){var e=document.getElementById(id);if(!e)return;drawn[id]=false;if(!("IntersectionObserver"in window)){fn(e);drawn[id]=true;return;}var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting&&!drawn[id]){fn(x.target);drawn[id]=true;io.disconnect();}});},{threshold:.3});io.observe(e);}
+function NS(){return"http://www.w3.org/2000/svg";}
+function mk(t,a){var e=document.createElementNS(NS(),t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+function drawScoreboard(svg){svg.innerHTML="";var W=680,H=300,padR=60,padT=10,padB=34;var padL=state.lang==="ko"?150:200;
+ var data=[{label:state.lang==="ko"?"재무만":"financial",r2:.400,hi:false},{label:state.lang==="ko"?"+ 텍스트":"+ text",r2:.447,hi:false},{label:state.lang==="ko"?"+ 성장":"+ growth",r2:.447,hi:false},{label:state.lang==="ko"?"+ 성장 & 텍스트":"+ growth & text",r2:.482,hi:true}];
+ var xMax=.55,plotW=W-padL-padR,rowH=(H-padT-padB)/data.length,barH=rowH*.56;function x(v){return padL+(v/xMax)*plotW;}
+ [0,.1,.2,.3,.4,.5].forEach(function(t){var gx=x(t);svg.appendChild(mk("line",{x1:gx,x2:gx,y1:padT,y2:H-padB,"class":"grid"}));var tx=mk("text",{x:gx,y:H-padB+18,"text-anchor":"middle","class":"tick-txt"});tx.textContent=t.toFixed(1);svg.appendChild(tx);});
+ data.forEach(function(d,i){var cy=padT+i*rowH+rowH/2;var lab=mk("text",{x:padL-12,y:cy+4,"text-anchor":"end","class":"bar-lbl"});if(d.hi)lab.setAttribute("font-weight","700");lab.textContent=d.label;svg.appendChild(lab);var bar=mk("rect",{x:padL,y:cy-barH/2,height:barH,width:0,fill:d.hi?"#7c2d3a":"#c3aa9e"});svg.appendChild(bar);var tW=x(d.r2)-padL;var vl=mk("text",{y:cy+4,"class":"val-lbl",x:padL+6,opacity:"0"});vl.textContent=d.r2.toFixed(3);svg.appendChild(vl);var st=null,dur=700+i*90;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/dur,1),e=1-Math.pow(1-p,3);bar.setAttribute("width",tW*e);if(p>.6){vl.setAttribute("opacity",(p-.6)/.4);vl.setAttribute("x",padL+tW*e+8);}if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});
+}
+function drawPca(svg){svg.innerHTML="";var W=680,H=320,padL=54,padR=24,padT=20,padB=46;
+ var pts=[{d:5,r2:.429},{d:10,r2:.434},{d:20,r2:.445},{d:30,r2:.448},{d:40,r2:.447},{d:50,r2:.446},{d:100,r2:.438},{d:200,r2:.431},{d:300,r2:.431}];
+ var yMin=.40,yMax=.46,plotW=W-padL-padR,plotH=H-padT-padB;function x(i){return padL+(i/(pts.length-1))*plotW;}function y(v){return padT+(1-(v-yMin)/(yMax-yMin))*plotH;}
+ [.40,.42,.44,.46].forEach(function(t){var gy=y(t);svg.appendChild(mk("line",{x1:padL,x2:W-padR,y1:gy,y2:gy,"class":"grid"}));var tx=mk("text",{x:padL-10,y:gy+4,"text-anchor":"end","class":"tick-txt"});tx.textContent=t.toFixed(2);svg.appendChild(tx);});
+ pts.forEach(function(p,i){var tx=mk("text",{x:x(i),y:H-padB+18,"text-anchor":"middle","class":"tick-txt"});tx.textContent=p.d;svg.appendChild(tx);});
+ var xt=mk("text",{x:padL+plotW/2,y:H-6,"text-anchor":"middle","class":"tick-txt","font-weight":"700"});xt.textContent=state.lang==="ko"?"남긴 PCA 차원 수":"PCA dimensions kept";svg.appendChild(xt);
+ var refY=y(.446);svg.appendChild(mk("line",{x1:padL,x2:W-padR,y1:refY,y2:refY,stroke:"#a9761a","stroke-width":"1","stroke-dasharray":"4 4"}));
+ var dp=pts.map(function(p,i){return(i?"L":"M")+x(i)+" "+y(p.r2);}).join(" ");var path=mk("path",{d:dp,fill:"none",stroke:"#7c2d3a","stroke-width":"2.5","stroke-linejoin":"round"});svg.appendChild(path);var len=path.getTotalLength();path.style.strokeDasharray=len;path.style.strokeDashoffset=len;
+ pts.forEach(function(p,i){var c=mk("circle",{cx:x(i),cy:y(p.r2),r:p.d===30?5.5:3.5,fill:p.d===30?"#7c2d3a":"#fff",stroke:"#7c2d3a","stroke-width":"2",opacity:"0"});svg.appendChild(c);setTimeout(function(){c.setAttribute("opacity","1");},700+i*70);});
+ var ann=mk("text",{x:x(3),y:y(.448)-12,"text-anchor":"middle","class":"val-lbl",fill:"#7c2d3a",opacity:"0"});ann.textContent=PEAK_LBL[state.lang];svg.appendChild(ann);setTimeout(function(){ann.setAttribute("opacity","1");},1500);
+ requestAnimationFrame(function(){path.style.transition="stroke-dashoffset 1.4s ease";path.style.strokeDashoffset=0;});
+}
+var revObs=null;
+function initReveal(){var els=document.querySelectorAll(".reveal");if(!("IntersectionObserver"in window)){els.forEach(function(e){e.classList.add("in");});return;}if(revObs)revObs.disconnect();revObs=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");revObs.unobserve(x.target);}});},{threshold:.1});els.forEach(function(e){revObs.observe(e);});}
+window.setLang=function(l){state.lang=l;document.body.classList.toggle("lang-ko",l==="ko");document.body.classList.toggle("lang-en",l==="en");document.getElementById("lang-en").classList.toggle("active",l==="en");document.getElementById("lang-ko").classList.toggle("active",l==="ko");renderMast();renderReport();};
+document.addEventListener("DOMContentLoaded",function(){renderMast();renderReport();});
+})();
+</script>
+</body>
+</html>
