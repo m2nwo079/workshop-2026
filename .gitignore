@@ -1,0 +1,13 @@
+venv/
+
+data/private/
+data/raw/
+
+__pycache__/
+*.pyc
+
+.ipynb_checkpoints/
+
+.DS_Store
+
+.env
