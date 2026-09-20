@@ -1,7 +1,6 @@
 venv/
 
-data/private/
-data/raw/
+data/
 
 __pycache__/
 *.pyc
