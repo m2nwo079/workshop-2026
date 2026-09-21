@@ -1,4 +1,4 @@
-# workshop-2026 — Predicting Online-Business Valuation Multiples
+# Predicting Online-Business Valuation Multiples
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-numeric_data-150458?logo=pandas&logoColor=white)
