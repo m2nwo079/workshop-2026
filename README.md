@@ -1,4 +1,4 @@
-# Predicting Online-Business Valuation Multiples
+# workshop-2026 — Predicting Online-Business Valuation Multiples
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-numeric_data-150458?logo=pandas&logoColor=white)
@@ -64,7 +64,7 @@ folds, so differences are attributable to the feature set.
 |---|---|---|
 | Target | `annual_listing_multiple` (listing multiple) | The sale multiple is **not** returned by the public API — verified by direct calls — so the listing multiple is the primary label. |
 | Transform | `log1p(target)` | Target is right-skewed; log makes it near-symmetric. |
-| Data | For Sale (183) + Sold (2,674) -> **2,848** valid rows | Sold listings retain full financials/text, so they enlarge the training set even with the listing-multiple target. |
+| Data | For Sale (183) + Sold (2,674) = 2,857 collected, **2,848 valid** after dropping 9 rows with a missing/non-positive target | Sold listings retain full financials/text, so they enlarge the training set even with the listing-multiple target. |
 | Leakage guard | Drop `listing_price`, `unpriced`, `listing_multiple` | multiple ~= price / profit, so any price field leaks the answer. Enforced in code. |
 
 ---
